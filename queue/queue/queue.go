@@ -11,3 +11,8 @@ type (
 		next  *node
 	}
 )
+
+// Size return the size of queue
+func (slf *Queue) Size() int {
+	return slf.length
+}
