@@ -14,6 +14,15 @@ type (
 	}
 )
 
+// New create a new queue
+func New() *Queue {
+	return &Queue{
+		head:   nil,
+		tail:   nil,
+		length: 0,
+	}
+}
+
 // Enqueue insert a new node at the end of queue
 func (slf *Queue) Enqueue(newValue interface{}) {
 	newNode := &node{
