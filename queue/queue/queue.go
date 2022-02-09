@@ -33,7 +33,7 @@ func (slf *Queue) Enqueue(newValue interface{}) {
 	slf.length++
 }
 
-// Dequeue fetch a node from the head of queue and delete it from queue
+// Dequeue fetch the head node from the queue and delete it
 func (slf *Queue) Dequeue() interface{} {
 	if slf.length == 0 {
 		fmt.Println("queue is empty")
@@ -49,6 +49,16 @@ func (slf *Queue) Dequeue() interface{} {
 	}
 
 	return headNode.value
+}
+
+// Peek fetch the head node from the queue without removing it
+func (slf *Queue) Peek() interface{} {
+	if slf.length == 0 {
+		fmt.Println("queue is empty")
+		return nil
+	}
+
+	return slf.head.value
 }
 
 // Size return the size of queue
